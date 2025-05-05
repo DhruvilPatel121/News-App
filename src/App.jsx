@@ -1,10 +1,15 @@
 import React from "react"
-import Layout from "./layout/Layout"
+import { RouterProvider } from "react-router-dom"
+import { router } from "./routes"
+
 
 function App() {
 
   return (
-    <Layout />
+    // <div>
+    //   <h1>News App</h1>
+    // </div>
+    <RouterProvider router={router} />
   )
 }
 
