@@ -39,7 +39,7 @@ function Layout() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-600">
-              © 2024 NewsHub. All rights reserved.
+              © 2025 NewsHub. All rights reserved.
             </div>
             <div className="flex space-x-6">
               <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
