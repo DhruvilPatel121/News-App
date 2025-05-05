@@ -24,6 +24,9 @@
 
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
+import Search from './Search'
 
 function Header() {
 
@@ -52,7 +55,8 @@ function Header() {
             <span className="text-2xl font-bold text-blue-600">NewsHub</span>
           </NavLink>
 
-          
+          <Search />
+
           <div className="hidden lg:flex items-center space-x-6">
             {navItems.map((item) => (
               <NavLink
@@ -76,7 +80,7 @@ function Header() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none"
           >
-            <svg
+            {/* <svg
               className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
@@ -87,7 +91,12 @@ function Header() {
               ) : (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               )}
-            </svg>
+            </svg> */}
+            {/* {isMenuOpen ? '✕' : '☰'} */}
+            <FontAwesomeIcon 
+              icon={isMenuOpen ? faXmark : faBars} 
+              className="h-6 w-6"
+            />
           </button>
         </nav>
 
