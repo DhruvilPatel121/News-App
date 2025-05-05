@@ -1,22 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import NewsCard from '../components/NewsCard'
+import { fetchNews } from '../service/newsService'
 
 function Technology() {
+  const [technologyNews, setTechnologyNews] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    const technologyNews = [
-    {
-      title: "Latest Technology Trends 2024",
-      description: "Exploring the cutting-edge developments in AI and machine learning...",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCG8bdz72RB6O6rY84damqYuGItpVpceLOX0wJEDccig&s&ec=72940543",
-      category: "Technology"
-    },
-    {
-      title: "Global Economic Updates",
-      description: "Markets show positive trends as global economy strengthens...",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTfcp3EZxLI-hNT6Jtb6-1pK7Re2xT3GiNtOxK9ip1Uw&s&ec=72940543",
-      category: "Business"
-    },
-  ]
+  useEffect(() => {
+    const getNews = async () => {
+      const data = await fetchNews('technology');
+      setTechnologyNews(data);
+      setLoading(false);
+    };
+    
+    getNews();
+  }, []);
+
+  if (loading) {
+    return <div className="text-center py-10">Loading...</div>;
+  }
 
   return (
     <div className="space-y-6">

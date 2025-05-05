@@ -1,24 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import NewsCard from '../components/NewsCard'
+import { fetchNews } from '../service/newsService'
 
 function Sports() {
+  const [sportsNews, setSportsNews] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    const sportsNews = [
-    {
-      title: "Stock Market Hits New Record",
-      description: "Global markets reach unprecedented heights as investor confidence grows...",
-      image: "https://source.unsplash.com/random/800x600/?stock-market",
-      time: "2 hours ago",
-      category: "Business"
-    },
-    {
-      title: "Tech Giants Report Strong Earnings",
-      description: "Major technology companies exceed quarterly expectations...",
-      image: "https://source.unsplash.com/random/800x600/?technology-business",
-      time: "4 hours ago",
-      category: "Business"
-    },
-  ]
+  useEffect(() => {
+    const getSportsNews = async () => {
+      const data = await fetchNews('sports');
+      setSportsNews(data);
+      setLoading(false);
+    };
+    
+    getSportsNews();
+  }, []);
+
+  if (loading) {
+    return <div className="text-center py-10">Loading...</div>;
+  }
 
   return (
     <div className="space-y-6">
