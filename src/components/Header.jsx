@@ -32,11 +32,12 @@ function Header() {
   const navItems = [
     { path: '/', name: 'Home' },
     { path: '/business', name: 'Business' },
-    { path: '/technology', name: 'Technology' },
-    { path: '/sports', name: 'Sports' },
+    { path: '/entertainment', name: 'Entertainment' },
+    { path: '/general', name: 'General' },
     { path: '/health', name: 'Health' },
+    { path: '/sports', name: 'Sports' },
     { path: '/science', name: 'Science' },
-    { path: '/entertainment', name: 'Entertainment' }
+    { path: '/technology', name: 'Technology' },
   ]
 
   return (
