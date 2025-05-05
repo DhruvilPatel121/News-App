@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import NewsCard from '../components/NewsCard'
 
+function Technology() {
 
-function Home() {
-
-  const dummyNews = [
+    const technologyNews = [
     {
       title: "Latest Technology Trends 2024",
       description: "Exploring the cutting-edge developments in AI and machine learning...",
@@ -21,9 +20,9 @@ function Home() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-4xl font-bold text-gray-800">Today's Headlines</h1>
+      <h1 className="text-4xl font-bold text-gray-800">Technology News</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {dummyNews.map((news, index) => (
+        {technologyNews.map((news, index) => (
           <NewsCard key={index} news={news} showCategory={true} />
         ))}
       </div>
@@ -31,4 +30,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Technology
