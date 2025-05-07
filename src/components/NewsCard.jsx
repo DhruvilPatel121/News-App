@@ -7,14 +7,17 @@ function NewsCard({news, showCategory = false}) {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    // <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
       <img 
         src={news.image} 
         alt={news.title}
         className="w-full h-48 object-cover"
       />
-      <div className="p-6">
-        <div className="flex justify-between items-center mb-2 p-6">
+      {/* <div className="p-6"> */}
+        <div className="p-6 flex flex-col flex-grow">
+        {/* <div className="flex justify-between items-center mb-2 p-6"> */}
+        <div className="flex justify-between items-center mb-2">
           {showCategory && (
             <span className="text-blue-600 text-sm font-semibold">{news.category}</span>
           )}
@@ -25,10 +28,14 @@ function NewsCard({news, showCategory = false}) {
             <span className="text-gray-500 text-sm">{news.time}</span>
           )} */}
         
-        <h2 className="text-xl font-bold text-gray-800 mt-2">{news.title}</h2>
-        <p className="text-gray-600 mt-2">{news.description}</p>
-        <div className="mt-4 flex justify-between items-center">
+        {/* <h2 className="text-xl font-bold text-gray-800 mt-2">{news.title}</h2> */}
+        <h2 className="text-xl font-bold text-gray-800 mt-2 mb-2 line-clamp-2">{news.title}</h2>
+        {/* <p className="text-gray-600 mt-2">{news.description}</p> */}
+        <p className="text-gray-600 mt-2 mb-4 line-clamp-3 flex-grow">{news.description}</p>
+        {/* <div className="mt-4 flex justify-between items-center"> */}
+        <div className="mt-auto">
           <button onClick={handleReadMore} className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-300" >
+          {/* <button onClick={handleReadMore} className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-300" > */}
             Read More
           </button>
         </div>
